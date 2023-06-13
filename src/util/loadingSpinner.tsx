@@ -20,15 +20,11 @@ const LoadingContainer = styled.div`
 const spinAnimation = keyframes`
   0% {
     transform: rotate(0deg);
-    border-top-color: #000000;
-    border-right-color: #000000;
   } 75% {
-    border-top-color: #000000;
-    border-right-color: #000000;
+    opacity:1;
   } 100% {
     transform: rotate(360deg);
-    border-top-color: #fff;
-    border-right-color: #fff;
+    opacity:0;
   }
 `;
 
@@ -37,6 +33,8 @@ const LoadingIcon = styled.div`
   width: 50px;
   height: 50px;
   border: 4px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
   border-radius: 50%;
   animation: ${spinAnimation} 2s;
 `;
