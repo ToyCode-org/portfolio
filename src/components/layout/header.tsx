@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import { LinkMouseEvent, NavMouseEvent } from ".";
+import { publicImage } from "../../util/publicimage";
 
 const mkHeaderItems = (link: string, item: string) => {
   return {
@@ -39,7 +40,9 @@ export const Header = () => {
   return (
     <>
       <HeaderWrap>
-        <HeaderTop></HeaderTop>
+        <HeaderTop>
+          <Logo src={`${publicImage("simplelogo")}`} alt="logo" />
+        </HeaderTop>
         <NavBar onMouseLeave={(e) => navHoverHandler(e, false)}>
           <NavHover
             area-hidden="true"
@@ -95,8 +98,16 @@ const HeaderWrap = styled.header`
 `;
 
 const HeaderTop = styled.div`
-  height: 64px;
+  padding: 0 24px;
+  padding-top: 14px;
+  display: flex;
+  height: 50px;
 `;
+const Logo = styled.img`
+  border-radius: 50px;
+  cursor: pointer;
+`;
+
 const NavBar = styled.nav`
   padding: 0 20px;
   display: flex;
