@@ -45,6 +45,7 @@ const Greeting = styled.div`
   width: 100vw;
   height: 100vw;
   animation: ${greetingFadeout} 2s;
+  z-index: 999;
 `;
 
 const LayoutWrap = styled.div`

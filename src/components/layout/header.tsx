@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 import { LinkMouseEvent, NavMouseEvent } from ".";
 
 const mkHeaderItems = (link: string, item: string) => {
@@ -41,6 +41,32 @@ export const Header = () => {
       <HeaderWrap>
         <HeaderTop></HeaderTop>
         <NavBar onMouseLeave={(e) => navHoverHandler(e, false)}>
+          <NavHover
+            area-hidden="true"
+            style={
+              navHover.isHover
+                ? {
+                    opacity: "1",
+                    width: `${navHover.width}px`,
+                    height: `${(navHover.height * 2) / 3}px`,
+                    transform: `translateX(${navHover.x}px)`,
+                  }
+                : { opacity: "0" }
+            }
+          />
+          <NavUnderbar
+            area-hidden="true"
+            style={
+              navHover.isHover
+                ? {
+                    opacity: "1",
+                    width: `${navHover.width}px`,
+                    height: `${navHover.height}px`,
+                    transform: `translateX(${navHover.x}px)`,
+                  }
+                : { opacity: "1" }
+            }
+          />
           {headerItems.map((el, index) => {
             return (
               <NavList
@@ -60,19 +86,6 @@ export const Header = () => {
           })}
         </NavBar>
       </HeaderWrap>
-      <NavHover
-        area-hidden="true"
-        style={
-          navHover.isHover
-            ? {
-                opacity: "1",
-                width: `${navHover.width}px`,
-                height: `${navHover.height}px`,
-                transform: `translateX(${navHover.x}px)`,
-              }
-            : { opacity: "0" }
-        }
-      />
     </>
   );
 };
@@ -92,22 +105,44 @@ const NavBar = styled.nav`
 `;
 
 const NavList = styled(Link)<{ disable: string }>`
+  position: relative;
   padding: 16px 12px;
   color: ${(props) => {
     if (props.disable === "true") return props.theme.disableColor;
     return props.theme.mainFontColor;
   }};
+  border-bottom: ${(props) => {
+    if (props.disable === "false")
+      return `2px solid ${props.theme.mainFontColor}`;
+  }};
   font-weight: bold;
   transition: 0.2s;
   user-select: none;
+  z-index: 1;
+  &:hover {
+    color: ${(props) => props.theme.mainFontColor};
+  }
 `;
 
 const NavHover = styled.div`
   position: absolute;
-  top: 63px;
+  top: 74px;
+  left: 0px;
   background-color: #8b8b8b76;
+  transition: 0.2s;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  z-index: 0;
+`;
+
+const NavUnderbar = styled.div`
+  position: absolute;
+  top: 64px;
+  left: 0px;
+  border-bottom: 2px solid ${(props) => props.theme.mainFontColor};
   transition: 0.2s;
   user-select: none;
   cursor: pointer;
-  /* z-index: -1; */
+  z-index: 0;
 `;
