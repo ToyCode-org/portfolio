@@ -33,3 +33,7 @@ li {
 a {
   text-decoration: none;
 }
+a:active,
+:visited {
+  color: rgb(129, 129, 129);
+}

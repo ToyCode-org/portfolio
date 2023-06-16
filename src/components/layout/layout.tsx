@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 import { useState, useEffect } from "react";
 import { LoadingSpinner } from "../../util/loadingSpinner";
 import { Header } from "./header";
-import { Chat } from "./chat/chat";
 
 interface Props {
   children: React.ReactNode;
@@ -25,7 +24,6 @@ export const Layout = ({ children }: Props) => {
           <LoadingSpinner />
         </Greeting>
       ) : null}
-      <Chat />
     </LayoutWrap>
   );
 };

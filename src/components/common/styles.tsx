@@ -17,4 +17,11 @@ export const MsgBox = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
   border-radius: 10px;
   font-weight: 500;
+
+  & a {
+    transition: 0.2s;
+    &:hover {
+      color: ${(props) => props.theme.mainFontColor};
+    }
+  }
 `;
