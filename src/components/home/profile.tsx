@@ -26,7 +26,7 @@ export const Profile = () => {
       style={
         inView
           ? { opacity: "1", paddingTop: "0px" }
-          : { opacity: "0", paddingTop: "50px" }
+          : { opacity: "0", paddingTop: "80px" }
       }
     >
       <h2 id="profileBox">Profile</h2>
