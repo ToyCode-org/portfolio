@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { MainContainer, MsgBox } from "../components/common/styles";
 import { publicImage } from "../util/publicimage";
+import { Profile } from "../components/home/profile";
 
 export const Home = () => {
   return (
-    <Container>
+    <MainContainer>
       <MainLogo>
         <img src={`${publicImage("mainlogo")}`} alt="profile" />
       </MainLogo>
@@ -14,25 +15,14 @@ export const Home = () => {
         <br />
         다양한 개발 경험을 좋아하며 성장하는 습관을 만들어 가고 있습니다.
       </MsgBox>
-    </Container>
+      <Profile />
+    </MainContainer>
   );
 };
 
-const Container = styled.div`
-  margin: 0 auto;
-  width: 80%;
-`;
 const MainLogo = styled.div`
   display: flex;
   justify-content: center;
   background-color: white;
   border-radius: 20px;
-`;
-
-const MsgBox = styled.div`
-  margin: 30px 0;
-  padding: 30px;
-  background-color: ${(props) => props.theme.backgroundColor};
-  border-radius: 10px;
-  font-weight: 500;
 `;

@@ -45,14 +45,13 @@ const Greeting = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vw;
   animation: ${greetingFadeout} 2s;
   z-index: 999;
 `;
 
 const LayoutWrap = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-color: ${(props) => props.theme.mainBackgroundColor};
   color: ${(props) => props.theme.mainFontColor};
 `;
