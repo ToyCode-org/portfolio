@@ -39,7 +39,15 @@ const LoadingIcon = styled.div`
   animation: ${spinAnimation} 2s;
 `;
 
+const msgAnimation = keyframes`
+  75% {
+    opacity:1;
+  } 100% {
+    opacity:0;
+  }
+`;
 const LoadingMsg = styled.div`
   font-weight: bold;
   color: white;
+  animation: ${msgAnimation} 2s;
 `;
