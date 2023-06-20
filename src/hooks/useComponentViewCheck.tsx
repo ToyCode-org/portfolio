@@ -7,7 +7,7 @@ export const useComponentViewCheck = (elementId: string) => {
   const checkInView = () => {
     const element = document.querySelector(`#${elementId}`) as HTMLElement;
     const clientHeight = element.getBoundingClientRect().y;
-    if (clientHeight / 4 <= scrollPosition) {
+    if (clientHeight <= scrollPosition) {
       setInView(true);
     } else {
       setInView(false);

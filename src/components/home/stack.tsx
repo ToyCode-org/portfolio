@@ -28,21 +28,19 @@ const stackArr = [
   mkStack("jest", "30"),
 ];
 
-const rc = Math.ceil(stackArr.length);
-const testBubblePosition = new Array(rc).fill(new Array(rc).fill(null));
+const rc = Math.floor(stackArr.length / 2);
+
+let testBubblePosition = new Array(rc).fill(new Array(rc).fill(null));
+// TODO: make set bubble position algorithm
 
 const center = Math.floor(rc / 2);
-
-stackArr.forEach((v) => {});
-
-console.log(testBubblePosition);
 
 const bubblePositions = [
   [null, null, null, null, null, null, null],
   [
     null,
-    mkStack("nestjs", "70"),
     mkStack("postgreSQL", "50"),
+    mkStack("git", "50"),
     mkStack("jest", "30"),
     null,
     null,
@@ -50,7 +48,7 @@ const bubblePositions = [
   ],
   [
     null,
-    mkStack("git", "50"),
+    mkStack("nestjs", "70"),
     mkStack("javascript", "100"),
     mkStack("typescript", "95"),
     null,
@@ -92,22 +90,18 @@ export const Stack = () => {
     >
       <h2 id="stackBox">Stack</h2>
       <ContentBox>
-        {/* {stackArr.map((v, i) => {
-          return (
-            <BubbleElement key={i}>
-              <img
-                src={v.imageSrc}
-                alt={v.stack}
-                width={`${+v.importance * 2}px`}
-                height={`${+v.importance * 2}px`}
-              />
-            </BubbleElement>
-          );
-        })} */}
         <BubbleChart>
           {bubblePositions.map((row, rowIndex) => {
             return (
-              <div className="row" key={rowIndex}>
+              <div
+                className="row"
+                key={rowIndex}
+                style={
+                  rowIndex <= center
+                    ? { alignItems: "flex-end" }
+                    : { alignItems: "flex-start" }
+                }
+              >
                 {row.map((col, colIndex) => {
                   const position = [rowIndex, colIndex];
                   const dataIndex = bubblePositions[position[0]][position[1]];
@@ -146,8 +140,8 @@ const BubbleChart = styled.div`
 `;
 
 const BubbleElement = styled.span`
+  position: relative;
   & img {
-    position: relative;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
