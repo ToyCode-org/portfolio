@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { InnerContainer, MsgBox } from "../common/styles";
 import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
 
@@ -22,14 +21,8 @@ export const Profile = () => {
   const { inView } = useComponentViewCheck("profileBox");
 
   return (
-    <InnerContainer
-      style={
-        inView
-          ? { opacity: "1", paddingTop: "0px" }
-          : { opacity: "0", paddingTop: "80px" }
-      }
-    >
-      <h2 id="profileBox">Profile</h2>
+    <InnerContainer view={`${inView}`}>
+      <h2 id="profileBox">Profile 🧾</h2>
       <MsgBox>
         {infoArray.map((v, i) => {
           return (

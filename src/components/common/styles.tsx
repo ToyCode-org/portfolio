@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
+  position: relative;
   margin: 0 auto;
   padding-bottom: 80px;
   width: 80%;
 `;
 
-export const InnerContainer = styled.div`
-  margin-top: 50px;
-  min-height: 400px;
+export const InnerContainer = styled.div<{ view: string }>`
+  margin-bottom: 150px;
+  min-height: 200px;
+  opacity: ${(props) => (props.view === "true" ? 1 : 0)};
+  padding-top: ${(props) => (props.view === "true" ? 0 : 80)}px;
   transition: 0.6s;
 `;
 
 export const ContentBox = styled.div`
-  margin-top: 30px;
+  margin: 30px 0;
   padding: 30px;
   background-color: ${(props) => props.theme.backgroundColor};
   border-radius: 10px;

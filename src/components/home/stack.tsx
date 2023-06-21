@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React from "react";
 import { InnerContainer, ContentBox } from "../common/styles";
 import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
 import { publicImage } from "../../util/publicimage";
@@ -30,7 +29,7 @@ const stackArr = [
 
 const rc = Math.floor(stackArr.length / 2);
 
-let testBubblePosition = new Array(rc).fill(new Array(rc).fill(null));
+// let testBubblePosition = new Array(rc).fill(new Array(rc).fill(null));
 // TODO: make set bubble position algorithm
 
 const center = Math.floor(rc / 2);
@@ -79,16 +78,9 @@ const bubblePositions = [
 
 export const Stack = () => {
   const { inView } = useComponentViewCheck("stackBox");
-
   return (
-    <InnerContainer
-      style={
-        inView
-          ? { opacity: "1", paddingTop: "0px" }
-          : { opacity: "0", paddingTop: "80px" }
-      }
-    >
-      <h2 id="stackBox">Stack</h2>
+    <InnerContainer view={`${inView}`}>
+      <h2 id="stackBox">Stack 🎨</h2>
       <ContentBox>
         <BubbleChart>
           {bubblePositions.map((row, rowIndex) => {

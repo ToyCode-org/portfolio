@@ -42,6 +42,7 @@ export const Header = () => {
       <HeaderWrap>
         <HeaderTop>
           <Logo src={`${publicImage("simplelogo")}`} alt="logo" />
+          <h1>John's Profile</h1>
         </HeaderTop>
         <NavBar onMouseLeave={(e) => navHoverHandler(e, false)}>
           <NavHover
@@ -104,6 +105,7 @@ const HeaderTop = styled.div`
   height: 50px;
 `;
 const Logo = styled.img`
+  margin-right: 20px;
   border-radius: 50px;
   cursor: pointer;
 `;

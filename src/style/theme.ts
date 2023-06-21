@@ -3,7 +3,7 @@ export const dark = {
   mainBackgroundColor: "#111111",
   mainFontColor: "white",
   //// component
-  disableColor: "#888888",
+  disableColor: "#818181",
   backgroundColor: "#000000",
   boxShadow: "#333333",
 };
