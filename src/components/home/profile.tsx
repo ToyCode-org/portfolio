@@ -29,7 +29,13 @@ export const Profile = () => {
             <React.Fragment key={i}>
               <span>
                 {v.info} :{" "}
-                {v.isLink ? <a href={v.content}>{v.content}</a> : v.content}
+                {v.isLink ? (
+                  <a href={v.content} target="_blank" rel="noreferrer">
+                    {v.content}
+                  </a>
+                ) : (
+                  v.content
+                )}
               </span>
               <br />
               <br />

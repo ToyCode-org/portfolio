@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { LinkMouseEvent, NavMouseEvent } from ".";
 import { publicImage } from "../../util/publicimage";
+import { useScrollPosition } from "../../hooks/useScrollPosition";
 
 const mkHeaderItems = (link: string, item: string) => {
   return {
@@ -19,7 +20,7 @@ const headerItems = [
 
 export const Header = () => {
   const { pathname } = useLocation();
-
+  const { scrollPosition } = useScrollPosition();
   const [navHover, setNavHover] = useState({
     width: 0,
     height: 0,
@@ -47,7 +48,7 @@ export const Header = () => {
   return (
     <>
       <HeaderWrap>
-        <HeaderTop>
+        <HeaderTop style={scrollPosition === 0 ? {} : { height: "0px" }}>
           <Logo src={`${publicImage("simplelogo")}`} alt="logo" />
           <h1>John's Profile</h1>
         </HeaderTop>
@@ -60,6 +61,7 @@ export const Header = () => {
                     opacity: "1",
                     width: `${navHover.width}px`,
                     height: `${(navHover.height * 2) / 3}px`,
+                    top: `${scrollPosition === 0 ? 74 : 24}px`,
                     transform: `translateX(${navHover.x}px)`,
                   }
                 : { opacity: "0" }
@@ -73,6 +75,7 @@ export const Header = () => {
                     opacity: "1",
                     width: `${navHover.width}px`,
                     height: `${navHover.height}px`,
+                    top: `${scrollPosition === 0 ? 64 : 14}px`,
                     transform: `translateX(${navHover.x}px)`,
                   }
                 : { opacity: "1" }
@@ -113,6 +116,8 @@ const HeaderTop = styled.div`
   padding-top: 14px;
   display: flex;
   height: 50px;
+  overflow: hidden;
+  transition: 0.3s;
 `;
 const Logo = styled.img`
   margin-right: 20px;
@@ -149,7 +154,6 @@ const NavList = styled(Link)<{ disable: string }>`
 
 const NavHover = styled.div`
   position: absolute;
-  top: 74px;
   left: 0px;
   background-color: #8b8b8b76;
   transition: 0.2s;
@@ -161,7 +165,6 @@ const NavHover = styled.div`
 
 const NavUnderbar = styled.div`
   position: absolute;
-  top: 64px;
   left: 0px;
   border-bottom: 2px solid ${(props) => props.theme.mainFontColor};
   transition: 0.2s;

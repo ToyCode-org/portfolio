@@ -33,8 +33,7 @@ const eduList = [
   mkEdu(
     "팀스파르타 부트캠프(이노베이션 캠프)",
     "2022/08/01 - 2022.11.04",
-    "팀 프로젝트를 통한 협업능력 강화(React ↔ Spring)",
-    ["https://www.youtube.com/watch?v=DRviCVKXfDY - Ever-rent"]
+    "팀 프로젝트를 통한 협업능력 강화(React ↔ Spring)"
   ),
 ];
 

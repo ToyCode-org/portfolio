@@ -16,7 +16,11 @@ export const Portfolio = () => {
           const { name, period, member, link, projectBody, stack } =
             projectData;
           return (
-            <ContentBox key={index} style={{ marginBottom: "120px" }}>
+            <ContentBox
+              key={index}
+              style={{ marginBottom: "120px" }}
+              id={name.toLowerCase()}
+            >
               <ProjectBox>
                 <ProjectHead>
                   <ImageWrap href={link[0]} target="_blank" rel="noreferrer">
