@@ -2,12 +2,6 @@ import styled from "styled-components";
 import { InnerContainer, ContentBox } from "../common/styles";
 import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
 
-type EduList = {
-  title: string;
-  date: string;
-  matter: string;
-  list?: [];
-};
 const mkEdu = (
   title: string,
   date: string,

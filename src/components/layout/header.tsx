@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { LinkMouseEvent, NavMouseEvent } from ".";
 import { publicImage } from "../../util/publicimage";
 
@@ -12,7 +12,7 @@ const mkHeaderItems = (link: string, item: string) => {
 };
 const headerItems = [
   mkHeaderItems("/", "Home"),
-  mkHeaderItems("/portfolio", "portfolio"),
+  mkHeaderItems("/portfolio", "Portfolio"),
   mkHeaderItems("https://github.com/LEE-YO-HAN", "Github"),
   mkHeaderItems("https://lee-yo-han.github.io", "Blog"),
 ];
@@ -36,6 +36,13 @@ export const Header = () => {
       return setNavHover((prev) => ({ ...prev, width, height, x, isHover }));
     setNavHover((prev) => ({ ...prev, isHover }));
   };
+
+  const goScrollTop = () => {
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    goScrollTop();
+  }, [pathname]);
 
   return (
     <>
@@ -95,7 +102,10 @@ export const Header = () => {
 };
 
 const HeaderWrap = styled.header`
+  position: fixed;
+  width: 100%;
   background-color: ${(props) => props.theme.backgroundColor};
+  z-index: 99;
 `;
 
 const HeaderTop = styled.div`

@@ -1,10 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const MainContainerFadein = keyframes`
+  0%{
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+`;
 
 export const MainContainer = styled.div`
   position: relative;
   margin: 0 auto;
   padding-bottom: 80px;
   width: 80%;
+  animation: ${MainContainerFadein} 0.6s;
 `;
 
 export const InnerContainer = styled.div<{ view: string }>`

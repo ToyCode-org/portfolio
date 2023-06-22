@@ -67,7 +67,7 @@ const contentFadein = keyframes`
 `;
 const Content = styled.div`
   margin: 0 auto;
-  padding-top: 5%;
+  padding-top: 220px;
   width: 90%;
   animation: ${contentFadein} 2s;
 `;

@@ -5,5 +5,5 @@ export const Footer = () => {
 };
 
 const FooterContainer = styled.div`
-  height: 200px;
+  height: 100px;
 `;
