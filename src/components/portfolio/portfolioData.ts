@@ -199,7 +199,8 @@ export const projectData = [
     "2023/04/11 - 2023/04/28 (3week)",
     "개인 프로젝트",
     [
-      "https://www.na-hon-bob.shop",
+      // "https://www.na-hon-bob.shop",
+      "구글 SQL서버 만료로 점검중(배포환경 시연 연상은 Github에서 확인가능)",
       "https://github.com/ToyCode-org/na-hon-bob-fe",
     ],
     mkProjectBody(
