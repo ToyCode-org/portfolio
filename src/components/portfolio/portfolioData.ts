@@ -138,6 +138,30 @@ const badgeMaker = (stackName: string) => {
 
 export const projectData = [
   mkProjectData(
+    "로아링크",
+    "2023/11.03 ~ Now",
+    "개인 프로젝트",
+    ["https://www.loa-link.info/", "https://github.com/ToyCode-org/L-Link-FE"],
+    mkProjectBody(
+      [" - 외부 API를 활용한 개발 경험을 축적하기 위해 개발"],
+      [
+        " - 외부 API를 통한 개발 경험",
+        " - 시뮬레이터 알고리즘 제작을 통해 게임을 하는 유저가 실질적으로 사용해볼 수 있는 컨텐츠 제작",
+      ],
+      [
+        " - 그동안 개발했던 사이트는 실용성이 없어서 금방 폐기되었지만, 해당 프로젝트를 통해서 실제 유저가 사용할 수 있도록 개발한다는 것이 어떤 것인지 알게 해준 프로젝트",
+      ]
+    ),
+    [
+      [
+        badgeMaker("NextJS"),
+        badgeMaker("TypeScript"),
+        badgeMaker("styledComponents"),
+      ],
+      [],
+    ]
+  ),
+  mkProjectData(
     "Johns-Profile",
     "2023/06/12 ~ Now",
     "개인 프로젝트",
