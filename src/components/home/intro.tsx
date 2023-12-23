@@ -9,10 +9,10 @@ export const Intro = () => {
         <img src={`${publicImage("mainlogo")}`} alt="profile" />
       </MainLogo>
       <MsgBox>
-        안녕하세요. 웹 프론트엔드 개발자 John입니다. 👋
+        안녕하세요. 웹 프론트엔드 개발자 요한입니다. 👋
         <br />
         <br />
-        다양한 개발 경험을 좋아하며 성장하는 습관을 만들어 가고 있습니다.
+        항상 어제보다 더 나은 오늘을 만들기 위해 노력하고 있습니다.
       </MsgBox>
     </InnerContainer>
   );

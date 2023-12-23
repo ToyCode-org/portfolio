@@ -141,7 +141,10 @@ export const projectData = [
     "로아링크",
     "2023/11.03 ~ Now",
     "개인 프로젝트",
-    ["https://www.loa-link.info/", "https://github.com/ToyCode-org/L-Link-FE"],
+    [
+      "https://www.loa-link.info",
+      "https://github.com/ToyCode-org/L-Link-PageDir",
+    ],
     mkProjectBody(
       [" - 외부 API를 활용한 개발 경험을 축적하기 위해 개발"],
       [
