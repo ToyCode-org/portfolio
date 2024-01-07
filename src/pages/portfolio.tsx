@@ -29,7 +29,7 @@ export const Portfolio = () => {
                   <ProjectInfo>
                     <ProjectName>
                       Project name <br />
-                      <span>{name}</span>
+                      <span style={{ color: "orange" }}>{name}</span>
                     </ProjectName>
                     <Period>{period}</Period>
                     <ProjectMember>
